@@ -27,6 +27,8 @@ class Markov:
         seed = random.randint(0, len(self.data)-2)
         seed_word, next_word = self.data.keys()[seed]
         word = str(self.data[(seed_word, next_word)][random.randint(0, len(self.data[(seed_word, next_word)])-1)])
+        out.append(seed_word)
+        out.append(next_word)
         out.append(word)
         while word != "STOP":
             keys = [item for item in list(self.data.keys()) if word in str(item)]

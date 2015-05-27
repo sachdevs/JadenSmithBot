@@ -1,9 +1,8 @@
-from __future__ import division  # Python 2 users only
-import nltk, re, pprint
-from nltk import word_tokenize
+from chain import STOPWORD, make_chain
 
-with open ("morejaden.txt", "r") as myfile:
-    data=myfile.read().replace('\n', '')
+def main():
+    data = make_chain('morejaden.txt', 2)
 
-tokens = word_tokenize(data.encode('utf-8'))
-print tokens
+
+if __name__ == '__main__':
+    main()

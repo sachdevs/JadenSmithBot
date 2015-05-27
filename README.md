@@ -6,7 +6,8 @@ If you want to make a bot for someone else usomg tweet_scraper, simply run a sed
 \d+,\d+-\d+-\d+\s\d+:\d+:\d+,
 ```
 Replace that with nothing, then remove the first line of the text manually and you should be ready to go!
-Or you can modify the program to just interpret csv files... (probably easier to do that :P)
+Or you can modify the program to just interpret csv files... (probably easier to do that :P)<br>
+I am actually quite disappointed that Jaden Smith no longer has his account. Training this bot against 69 lines of text seems too little. I may switch to another person if it doesnt work out.
 <h3>Dependencies</h3>
 -NLTK <br>
 -Tweepy (for tweet scraper)

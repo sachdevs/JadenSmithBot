@@ -1,0 +1,8 @@
+# login info for twitter #
+##########################
+loginDet.py
+*.pyc
+
+# pycharm stuffs #
+##################
+.idea/

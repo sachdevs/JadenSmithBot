@@ -26,24 +26,13 @@ class Markov:
         out = []
         seed = random.randint(0, len(self.data)-2)
         seed_word, next_word = self.data.keys()[seed]
-        word = self.data[(seed_word, next_word)]
+        word = str(self.data[(seed_word, next_word)][random.randint(0, len(self.data[(seed_word, next_word)])-1)])
         out.append(word)
-        # while word != "STOP":
-        print word
-        for item in list(self.data.keys()):
-            print word in item
-
-        keys = [item for item in list(self.data.keys()) if item[0] == word]
-        print keys
-            # word = self.data[keys[random.randint(0, len(keys)-1)]]
-            # out.append(word)
-        # print self.data.keys()
-        # print seed_word, next_word
-        # print self.data[(seed_word, next_word)]
-        print
-        print
-        print
-        # print out
+        while word != "STOP":
+            keys = [item for item in list(self.data.keys()) if word in str(item)]
+            word = str(self.data[keys[random.randint(0, len(keys)-1)]][random.randint(0, len(self.data[(seed_word, next_word)])-1)])
+            out.append(word)
+        print out
 
 if __name__ == '__main__':
     markov = Markov('morejaden.txt', 2)

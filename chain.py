@@ -30,14 +30,21 @@ class Markov:
         out.append(seed_word)
         out.append(next_word)
         out.append(word)
+        counter = 0
         while word != "STOP":
-            keys = [item for item in list(self.data.keys()) if word in str(item)]
-            word = str(self.data[keys[random.randint(0, len(keys)-1)]][random.randint(0, len(self.data[(seed_word, next_word)])-1)])
+            keys = [item for item in list(self.data.keys()) if word in (item)]
+            random_key = keys[random.randint(0, len(keys)-1)]
+            # print str(random_key) + '\t' + str(self.data[random_key])
+            if(random_key[0] == word):
+                out.append(random_key[1])
+            words = self.data[random_key]
+            word = words[random.randint(0,len(words)-1)]
             out.append(word)
-        print out
+            counter += 1
+        print ' '.join(out[:len(out)-2])
 
 if __name__ == '__main__':
-    markov = Markov('morejaden.txt', 2)
+    markov = Markov('gselevator_tweets.txt', 2)
     markov.make_chain()
     # for line in markov.data:
     #     if(len(markov.data[line])) > 1:
